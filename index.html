@@ -154,22 +154,46 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        /* Floating Icons Canvas */
+        .floating-icons-canvas {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                radial-gradient(circle, rgba(255, 0, 128, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: floatUp 20s linear infinite;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 0;
+            overflow: hidden;
         }
 
-        .hero > * {
+        .floating-icon-item {
+            position: absolute;
+            opacity: 0.15;
+            transition: transform 0.5s ease-out;
+            will-change: transform;
+        }
+
+        .floating-icon-item svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Icon Positioning */
+        .floating-icon-item:nth-child(1) { top: 8%; left: 12%; width: 70px; }
+        .floating-icon-item:nth-child(2) { top: 15%; right: 15%; width: 55px; }
+        .floating-icon-item:nth-child(3) { top: 25%; left: 8%; width: 80px; }
+        .floating-icon-item:nth-child(4) { top: 35%; right: 8%; width: 65px; }
+        .floating-icon-item:nth-child(5) { top: 60%; left: 10%; width: 60px; }
+        .floating-icon-item:nth-child(6) { top: 70%; right: 12%; width: 75px; }
+        .floating-icon-item:nth-child(7) { top: 45%; left: 18%; width: 50px; }
+        .floating-icon-item:nth-child(8) { top: 55%; right: 20%; width: 45px; }
+        .floating-icon-item:nth-child(9) { top: 18%; left: 85%; width: 55px; }
+        .floating-icon-item:nth-child(10) { top: 78%; left: 20%; width: 50px; }
+        .floating-icon-item:nth-child(11) { top: 82%; right: 18%; width: 60px; }
+        .floating-icon-item:nth-child(12) { top: 12%; right: 35%; width: 70px; }
+
+        .hero > *:not(.floating-icons-canvas) {
             position: relative;
             z-index: 1;
         }
@@ -1323,6 +1347,91 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Floating Marketing Icons -->
+        <div class="floating-icons-canvas" id="heroCanvas">
+            <!-- Chart/Analytics -->
+            <div class="floating-icon-item" data-speed="0.4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <path d="M3 3v18h18M7 16l4-4 4 4 6-6"/>
+                </svg>
+            </div>
+            <!-- Target -->
+            <div class="floating-icon-item" data-speed="0.3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
+            <!-- Lightbulb -->
+            <div class="floating-icon-item" data-speed="0.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <path d="M9 18h6M10 22h4M15 8a3 3 0 11-6 0 3 3 0 016 0zm-1.5 5h-3c0-1.5 0-3 1.5-3s1.5 1.5 1.5 3z"/>
+                    <path d="M12 2v1m6.364 1.636l-.707.707M23 12h-1M4 12H3m3.343-6.657l-.707-.707"/>
+                </svg>
+            </div>
+            <!-- Mobile/Phone -->
+            <div class="floating-icon-item" data-speed="0.35">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2"/>
+                    <path d="M12 18h.01"/>
+                </svg>
+            </div>
+            <!-- Chat Bubble -->
+            <div class="floating-icon-item" data-speed="0.45">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                </svg>
+            </div>
+            <!-- Rocket -->
+            <div class="floating-icon-item" data-speed="0.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <path d="M12 2L3 14h8v8l9-12h-8V2z"/>
+                </svg>
+            </div>
+            <!-- Email -->
+            <div class="floating-icon-item" data-speed="0.3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                </svg>
+            </div>
+            <!-- Star -->
+            <div class="floating-icon-item" data-speed="0.4">
+                <svg viewBox="0 0 24 24" fill="#999">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            </div>
+            <!-- Users/Team -->
+            <div class="floating-icon-item" data-speed="0.35">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M2 21v-2a4 4 0 014-4h6a4 4 0 014 4v2"/>
+                    <circle cx="19" cy="7" r="2"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                </svg>
+            </div>
+            <!-- Trending Arrow -->
+            <div class="floating-icon-item" data-speed="0.45">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                    <polyline points="17 6 23 6 23 12"/>
+                </svg>
+            </div>
+            <!-- Bell/Notification -->
+            <div class="floating-icon-item" data-speed="0.4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF0080" stroke-width="2">
+                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/>
+                </svg>
+            </div>
+            <!-- Money/Dollar -->
+            <div class="floating-icon-item" data-speed="0.5">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v12M15 9a3 3 0 00-6 0v0a3 3 0 006 0M9 15a3 3 0 006 0v0a3 3 0 00-6 0"/>
+                </svg>
+            </div>
+        </div>
         <div class="hero-content">
             <h1>Your <span class="invisible-word">Brand</span> Isn't Invisible.<br>Your <span class="highlight">Strategy</span> Is.</h1>
             <p>We build strategies engineered uniquely for your business—no templates, no recycled playbooks, no guesswork. Just pure insight, clarity, and execution that moves markets.</p>
@@ -1396,7 +1505,7 @@
 
     <!-- Positioning Block -->
     <section class="differentiator" id="every-single-one-section">
-        <p style="font-size: 56px; font-weight: 400; line-height: 1.2; margin-bottom: 32px; letter-spacing: -1.5px; color: var(--white);">While most agencies use the same playbook, we dissect your business and build a strategy unique to you.</p>
+        <p style="font-size: 56px; font-weight: 600; line-height: 1.2; margin-bottom: 32px; letter-spacing: -1.5px; color: var(--white);">While most agencies use the same playbook, we dissect your business and build a strategy unique to you.</p>
         <h2 style="color: var(--white);">Every Brand Gets a Different Strategy.<br><span class="word-reveal" style="animation-delay: 0s">Every</span> <span class="word-reveal" style="animation-delay: 0.5s">Single</span> <span class="word-reveal" style="animation-delay: 1s">One</span>.</h2>
     </section>
 
@@ -1472,18 +1581,14 @@
                     <p>Turn attention into action. Your brand—visible, relevant, impossible to ignore.</p>
                 </div>
                 <div class="service-visual">
-                    <div class="visual-placeholder">
-                        <div class="shape shape-square"></div>
-                    </div>
+                    <img src="assets/social-media-optimized.webp" alt="Social Media Strategy Dashboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
             </div>
 
             <!-- Card 2: Image LEFT | Text RIGHT -->
             <div class="prominent-service-card reverse">
                 <div class="service-visual">
-                    <div class="visual-placeholder">
-                        <div class="shape shape-circle"></div>
-                    </div>
+                    <img src="assets/performance-marketing-optimized.webp" alt="Performance Marketing Analytics" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
                 <div class="service-content">
                     <h3>Performance Marketing</h3>
@@ -1498,9 +1603,7 @@
                     <p>Content that doesn't just educate—it persuades, converts, and positions you as the category leader.</p>
                 </div>
                 <div class="service-visual">
-                    <div class="visual-placeholder">
-                        <div class="shape shape-triangle"></div>
-                    </div>
+                    <img src="assets/content-marketing-optimized.webp" alt="Content Marketing Strategy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                 </div>
             </div>
         </div>
@@ -1509,21 +1612,21 @@
         <div class="secondary-services-grid">
             <div class="secondary-service-card">
                 <div class="service-icon">
-                    <div class="icon-shape icon-square"></div>
+                    <img src="assets/tvcs-dvcs-optimized.webp" alt="TVCs & DVCs Video Ads" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h3>TVCs & DVCs (Video Ads)</h3>
                 <p>Cinematic storytelling designed to stop scrolling and start converting.</p>
             </div>
             <div class="secondary-service-card">
                 <div class="service-icon">
-                    <div class="icon-shape icon-circle"></div>
+                    <img src="assets/seo-optimized.webp" alt="Search Engine Optimization" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h3>Search Engine Optimization (SEO)</h3>
                 <p>Rank higher, get found, win demand before competitors see it coming.</p>
             </div>
             <div class="secondary-service-card">
                 <div class="service-icon">
-                    <div class="icon-shape icon-triangle"></div>
+                    <img src="assets/offline-branding-optimized.webp" alt="Offline Branding" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h3>Offline Branding (Hoardings, Signage, Stationery)</h3>
                 <p>Your brand everywhere—consistent, bold, unmistakable.</p>
@@ -1989,6 +2092,29 @@
             observer.observe(comparisonSection);
         }
 
+        // 6. Mouse Parallax for Floating Icons
+        function initIconParallax() {
+            const canvas = document.getElementById('heroCanvas');
+            const icons = document.querySelectorAll('.floating-icon-item');
+
+            if (!canvas || icons.length === 0) return;
+
+            // Disable on mobile for performance
+            if (window.innerWidth < 768) return;
+
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                icons.forEach((icon) => {
+                    const speed = parseFloat(icon.dataset.speed) || 0.5;
+                    const x = (mouseX - 0.5) * 80 * speed;
+                    const y = (mouseY - 0.5) * 80 * speed;
+                    icon.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+                });
+            });
+        }
+
         // Initialize all animations on load
         document.addEventListener('DOMContentLoaded', () => {
             initStaggeredTypography();
@@ -1996,6 +2122,7 @@
             initParallax();
             initEverySingleOneAnimation();
             initComparisonAnimation();
+            initIconParallax();
         });
 
         // Respect user's motion preferences
