@@ -132,6 +132,7 @@
             gap: 5px;
             cursor: pointer;
             padding: 8px;
+            z-index: 1001;
         }
 
         .mobile-menu-btn span {
@@ -139,6 +140,22 @@
             height: 2px;
             background: var(--black);
             transition: all 0.3s;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav ul.mobile-active {
+            display: flex !important;
         }
 
         /* Hero Section */
@@ -1216,7 +1233,35 @@
             .differentiator h2 { font-size: 42px; }
             .three-col, .portfolio-grid, .testimonials { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; }
-            nav ul { display: none; }
+
+            /* Mobile Navigation */
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            nav ul li {
+                margin: 0;
+                padding: 12px 0;
+                border-bottom: 1px solid #f0f0f0;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+            }
+
             .mobile-menu-btn { display: flex; }
 
             /* Services responsive */
@@ -1585,9 +1630,8 @@
         <div class="logo">Brand<span class="logo-pulse">Pulse</span></div>
         <ul>
             <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="#work">Portfolio</a></li>
             <li><a href="#process">Process</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#contact" class="btn-nav">Let's Talk</a></li>
         </ul>
         <div class="mobile-menu-btn">
@@ -2160,10 +2204,9 @@
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Portfolio</a></li>
                     <li><a href="#process">Process</a></li>
-                    <li><a href="#">Careers</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -2208,6 +2251,33 @@
                 nav.classList.remove('scrolled');
             }
         });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+
+        if (mobileMenuBtn && navUl) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navUl.classList.toggle('mobile-active');
+            });
+
+            // Close mobile menu when clicking a link
+            navUl.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    navUl.classList.remove('mobile-active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navUl.contains(e.target)) {
+                    mobileMenuBtn.classList.remove('active');
+                    navUl.classList.remove('mobile-active');
+                }
+            });
+        }
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll('.faq-item');
