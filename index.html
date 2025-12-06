@@ -1055,6 +1055,545 @@
             color: var(--gray);
         }
 
+        /* ============================================
+           SOCIAL PROOF WALL STYLES
+           ============================================ */
+
+        .client-logos-ticker-container {
+            margin: 60px 0;
+            overflow: hidden;
+        }
+
+        .client-logos-ticker {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            padding: 30px 0;
+            white-space: nowrap;
+        }
+
+        .client-logos-ticker.ticker-right {
+            animation: scrollRight 30s linear infinite;
+        }
+
+        .client-logos-ticker.ticker-left {
+            animation: scrollLeft 30s linear infinite;
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .client-logos-ticker img {
+            height: 60px;
+            width: auto;
+            opacity: 0.6;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .client-logos-ticker:hover {
+            animation-play-state: paused;
+        }
+
+        .client-logos-ticker img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--pink);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-carousel {
+            margin-top: 80px;
+        }
+
+        .whatsapp-carousel h3 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: var(--black);
+        }
+
+        .carousel-track {
+            column-count: 5;
+            column-gap: 20px;
+            padding: 20px 0 40px;
+        }
+
+        .whatsapp-card {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+            break-inside: avoid;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .whatsapp-card:nth-child(2n) {
+            animation: float 7s ease-in-out infinite;
+            animation-delay: -1s;
+        }
+
+        .whatsapp-card:nth-child(3n) {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: -2s;
+        }
+
+        .whatsapp-card:nth-child(5n) {
+            animation: float 9s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-8px) translateX(4px);
+            }
+            50% {
+                transform: translateY(-4px) translateX(-4px);
+            }
+            75% {
+                transform: translateY(-12px) translateX(2px);
+            }
+        }
+
+        .whatsapp-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            animation-play-state: paused;
+        }
+
+        .whatsapp-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* ============================================
+           WORK TABS STYLES
+           ============================================ */
+
+        .work-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 14px 32px;
+            background: transparent;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+        }
+
+        .tab-btn.active {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: var(--white);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .portfolio-item.video {
+            position: relative;
+        }
+
+        .play-icon-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pink);
+            font-size: 28px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-item.video:hover .play-icon-overlay {
+            background: var(--pink);
+            color: var(--white);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* ============================================
+           VIDEO TESTIMONIALS STYLES
+           ============================================ */
+
+        .featured-video {
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: var(--light-gray);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-info {
+            text-align: center;
+        }
+
+        .video-info h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 8px;
+        }
+
+        .client-title {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .client-result {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--pink);
+            font-style: italic;
+        }
+
+        .testimonials-video-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-video-card {
+            position: relative;
+            aspect-ratio: 9/16;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: block;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-video-card:hover {
+            transform: scale(1.03);
+        }
+
+        .video-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .video-link:hover .video-container {
+            transform: scale(1.02);
+        }
+
+        .testimonial-video-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pink);
+            font-size: 24px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .testimonial-video-card:hover .play-button {
+            background: var(--pink);
+            color: var(--white);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 174, 0, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(255, 174, 0, 0); }
+        }
+
+        .video-card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 32px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-video-card:hover .video-card-info {
+            transform: translateY(0);
+        }
+
+        .video-card-info h4 {
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .video-card-info p {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+
+        .whatsapp-testimonials {
+            margin-top: 80px;
+        }
+
+        .whatsapp-testimonials h3 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 48px;
+            color: var(--black);
+        }
+
+        .whatsapp-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .whatsapp-grid .whatsapp-card {
+            flex: none;
+            cursor: pointer;
+        }
+
+        /* ============================================
+           MEDIA MODAL STYLES
+           ============================================ */
+
+        .media-modal .modal-content {
+            background: transparent;
+            padding: 0;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+
+        .media-modal img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-caption {
+            background: rgba(0,0,0,0.8);
+            color: var(--white);
+            padding: 16px 24px;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .video-modal .modal-content {
+            max-width: 1200px;
+            background: var(--black);
+            padding: 20px;
+        }
+
+        .video-modal video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        /* ============================================
+           RESPONSIVE - SOCIAL PROOF & NEW SECTIONS
+           ============================================ */
+
+        @media (max-width: 1024px) {
+            .client-logos-ticker img {
+                height: 50px;
+            }
+
+            .client-logos-ticker {
+                gap: 60px;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .testimonials-video-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .whatsapp-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .carousel-track {
+                column-count: 3;
+                column-gap: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .client-logos-ticker img {
+                height: 40px;
+            }
+
+            .client-logos-ticker {
+                gap: 40px;
+            }
+
+            .whatsapp-carousel h3,
+            .whatsapp-testimonials h3 {
+                font-size: 24px;
+            }
+
+            .carousel-track {
+                column-count: 2;
+                column-gap: 16px;
+                padding: 10px 0 30px;
+            }
+
+            .whatsapp-card {
+                padding: 10px;
+            }
+
+            .work-tabs {
+                gap: 12px;
+            }
+
+            .tab-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .whatsapp-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .testimonials-video-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                max-width: 400px;
+            }
+
+            .video-info h3 {
+                font-size: 20px;
+            }
+        }
+
         /* FAQ */
         .faq-container {
             max-width: 800px;
@@ -1997,88 +2536,417 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="content-section light" id="work">
+    <!-- Social Proof Wall -->
+    <section class="content-section trust-section">
         <div class="section-header">
-            <div class="section-label">PORTFOLIO</div>
-            <h2>See How <span class="highlight">Brands</span> Grow With Us</h2>
-            <p>Campaigns, case studies, creative, performance—real results, not claims</p>
+            <div class="section-label">TRUSTED BY</div>
+            <h2>Brands We've <span class="highlight">Transformed</span></h2>
         </div>
-        <div class="portfolio-grid">
-            <!-- Portfolio items - replace with actual images -->
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 0%, #000 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>+300% Engagement Growth</p>
-                </div>
+
+        <!-- Client Logos Ticker - Two Lines -->
+        <div class="client-logos-ticker-container">
+            <!-- First Line: Right to Left -->
+            <div class="client-logos-ticker ticker-right">
+                <img src="assets/clients/acker.webp" alt="Acker" loading="lazy">
+                <img src="assets/clients/choithram.webp" alt="Choithram International" loading="lazy">
+                <img src="assets/clients/coolzone.webp" alt="Coolzone" loading="lazy">
+                <img src="assets/clients/fanpark.webp" alt="FAnpark" loading="lazy">
+                <img src="assets/clients/jbpl.webp" alt="JBPL" loading="lazy">
+                <img src="assets/clients/joytree.webp" alt="Joy Tree" loading="lazy">
+                <img src="assets/clients/mmo.webp" alt="Money Matters Online" loading="lazy">
+                <img src="assets/clients/kurtos.webp" alt="Kurtos" loading="lazy">
+                <!-- Duplicate for seamless loop -->
+                <img src="assets/clients/acker.webp" alt="Acker" loading="lazy">
+                <img src="assets/clients/choithram.webp" alt="Choithram International" loading="lazy">
+                <img src="assets/clients/coolzone.webp" alt="Coolzone" loading="lazy">
+                <img src="assets/clients/fanpark.webp" alt="FAnpark" loading="lazy">
+                <img src="assets/clients/jbpl.webp" alt="JBPL" loading="lazy">
+                <img src="assets/clients/joytree.webp" alt="Joy Tree" loading="lazy">
+                <img src="assets/clients/mmo.webp" alt="Money Matters Online" loading="lazy">
+                <img src="assets/clients/kurtos.webp" alt="Kurtos" loading="lazy">
             </div>
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000 0%, #FFAE00 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>+500% Revenue Increase</p>
-                </div>
+
+            <!-- Second Line: Left to Right -->
+            <div class="client-logos-ticker ticker-left">
+                <img src="assets/clients/niveshpe.webp" alt="NiveshPe" loading="lazy">
+                <img src="assets/clients/ondgo.webp" alt="OnDGo" loading="lazy">
+                <img src="assets/clients/mangalbhog.webp" alt="Shri Mangal Bhog" loading="lazy">
+                <img src="assets/clients/sktraders.webp" alt="SK Traders" loading="lazy">
+                <img src="assets/clients/tm.webp" alt="TM" loading="lazy">
+                <img src="assets/clients/vch.webp" alt="VConnect Holidays" loading="lazy">
+                <img src="assets/clients/carragreen.webp" alt="Carragreen" loading="lazy">
+                <!-- Duplicate for seamless loop -->
+                <img src="assets/clients/niveshpe.webp" alt="NiveshPe" loading="lazy">
+                <img src="assets/clients/ondgo.webp" alt="OnDGo" loading="lazy">
+                <img src="assets/clients/mangalbhog.webp" alt="Shri Mangal Bhog" loading="lazy">
+                <img src="assets/clients/sktraders.webp" alt="SK Traders" loading="lazy">
+                <img src="assets/clients/tm.webp" alt="TM" loading="lazy">
+                <img src="assets/clients/vch.webp" alt="VConnect Holidays" loading="lazy">
+                <img src="assets/clients/carragreen.webp" alt="Carragreen" loading="lazy">
             </div>
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 0%, #666 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>2M+ Impressions</p>
-                </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Brands Transformed</div>
             </div>
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #666 0%, #000 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>Brand Recognition +450%</p>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years Excellence</div>
             </div>
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000 0%, #666 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>Industry Authority Status</p>
-                </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Client Satisfaction</div>
             </div>
-            <div class="portfolio-item">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 50%, #000 100%);"></div>
-                <div class="portfolio-overlay">
-                    <h4>Client Project Name</h4>
-                    <p>Market Leader Position</p>
+        </div>
+
+        <!-- WhatsApp Testimonials Carousel -->
+        <div class="whatsapp-carousel">
+            <h3>Real Feedback, Real Results</h3>
+            <div class="carousel-track">
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-1.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-1.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-2.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-2.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-3.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-3.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-4.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-4.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-5.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-5.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-6.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-6.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-7.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-7.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-8.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-8.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-9.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-9.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-10.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-10.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-11.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-11.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-12.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-12.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-13.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-13.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-14.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-14.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-15.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-15.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-16.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-16.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-17.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-17.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-18.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-18.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-19.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-19.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-20.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-20.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-21.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-21.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-22.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-22.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-23.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-23.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-24.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-24.webp" alt="Client WhatsApp feedback" loading="lazy">
+                </div>
+                <div class="whatsapp-card" onclick="openMediaModal('image', 'assets/whatsapp/wa-25.webp', 'Client Feedback')">
+                    <img src="assets/whatsapp/wa-25.webp" alt="Client WhatsApp feedback" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="content-section">
+    <!-- Portfolio Section -->
+    <section class="content-section light" id="work">
+        <div class="section-header">
+            <div class="section-label">PORTFOLIO</div>
+            <h2>Our Work <span class="highlight">In Action</span></h2>
+            <p>Instagram content, video production, and campaign results</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="work-tabs">
+            <button class="tab-btn active" data-tab="instagram">Instagram Content</button>
+            <button class="tab-btn" data-tab="video">Video Production</button>
+            <button class="tab-btn" data-tab="campaigns">Campaign Results</button>
+        </div>
+
+        <!-- Instagram Tab Content -->
+        <div class="tab-content active" id="instagram-tab">
+            <div class="portfolio-grid">
+                <!-- Instagram Posts Grid - Replace with actual Instagram content -->
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-1.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-1.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-2.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-2.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-3.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-3.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-4.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-4.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Reel</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-5.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-5.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-6.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-6.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-7.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-7.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Story</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-8.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-8.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Post</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" onclick="openMediaModal('image', 'assets/instagram/grid-9.jpg', 'Instagram Post')">
+                    <img src="assets/instagram/grid-9.jpg" alt="Instagram content" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <h4>Instagram Carousel</h4>
+                        <p>View Full Post</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Content Tab -->
+        <div class="tab-content" id="video-tab">
+            <div class="portfolio-grid">
+                <!-- Video Thumbnails with Play Icons -->
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/reel-1.mp4', 'Brand Reel')">
+                    <img src="assets/work/reel-1-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Brand Reel</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/podcast-1.mp4', 'Podcast Episode')">
+                    <img src="assets/work/podcast-1-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Podcast Episode</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/shoot-1.mp4', 'Brand Shoot')">
+                    <img src="assets/work/shoot-1-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Brand Shoot</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/reel-2.mp4', 'Social Reel')">
+                    <img src="assets/work/reel-2-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Social Reel</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/podcast-2.mp4', 'Podcast Clip')">
+                    <img src="assets/work/podcast-2-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Podcast Clip</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+                <div class="portfolio-item video-item" onclick="openMediaModal('video', 'assets/work/shoot-2.mp4', 'Product Shoot')">
+                    <img src="assets/work/shoot-2-thumb.jpg" alt="Video content" loading="lazy">
+                    <div class="play-icon-overlay">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">▶</div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h4>Product Shoot</h4>
+                        <p>Watch Video</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Campaign Results Tab -->
+        <div class="tab-content" id="campaigns-tab">
+            <div class="portfolio-grid">
+                <!-- Campaign Result Cards with Metrics -->
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 0%, #000 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>E-Commerce Brand</h4>
+                        <p>+300% Revenue Growth</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000 0%, #FFAE00 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>SaaS Platform</h4>
+                        <p>5x Lead Generation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 0%, #666 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>Hospitality Brand</h4>
+                        <p>2M+ Impressions</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #666 0%, #000 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>Legal Services</h4>
+                        <p>Brand Recognition +450%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000 0%, #666 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>Healthcare Provider</h4>
+                        <p>Market Leader Position</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #FFAE00 50%, #000 100%);"></div>
+                    <div class="portfolio-overlay">
+                        <h4>Manufacturing</h4>
+                        <p>Industry Authority</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section - Video Focus -->
+    <section class="content-section testimonials-section">
         <div class="section-header">
             <div class="section-label">TESTIMONIALS</div>
-            <h2>Brands That Partner With Us Don't Just Grow—They <span class="highlight">Transform</span></h2>
-            <p>Hear their stories. Watch their wins.</p>
+            <h2>Brands That <span class="highlight">Transform</span> With Us</h2>
+            <p>Don't take our word for it—watch their stories</p>
         </div>
-        <div class="testimonials">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"BrandPulse didn't just boost our numbers—they completely transformed how our market sees us. We went from invisible to industry leaders in 8 months."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar"></div>
-                    <div class="author-info">
-                        <h4>Client Name</h4>
-                        <p>CEO, Company Name</p>
-                    </div>
+
+        <!-- Video Testimonials Grid -->
+        <div class="testimonials-video-grid">
+            <a href="https://youtube.com/shorts/8bQCiyyFfdU" target="_blank" class="testimonial-video-card">
+                <img src="https://img.youtube.com/vi/8bQCiyyFfdU/hqdefault.jpg" alt="Mandeep Duggal testimonial" loading="lazy">
+                <div class="play-button">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 24px;">▶</div>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Finally, an agency that actually listened and built something unique for us. No cookie-cutter solutions. Just pure strategy that works."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar"></div>
-                    <div class="author-info">
-                        <h4>Client Name</h4>
-                        <p>Marketing Director, Company Name</p>
-                    </div>
+                <div class="video-card-info">
+                    <h4>Mandeep Duggal</h4>
+                    <p>Founder, OnDGo Travels</p>
                 </div>
-            </div>
+            </a>
+            <a href="https://youtube.com/shorts/WRk3h9AL8BE" target="_blank" class="testimonial-video-card">
+                <img src="https://img.youtube.com/vi/WRk3h9AL8BE/hqdefault.jpg" alt="Vanita Jain testimonial" loading="lazy">
+                <div class="play-button">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 24px;">▶</div>
+                </div>
+                <div class="video-card-info">
+                    <h4>Vanita Jain</h4>
+                    <p>Founder, VConnect Holidays</p>
+                </div>
+            </a>
+            <a href="https://youtube.com/shorts/rve0eHGxxTU" target="_blank" class="testimonial-video-card">
+                <img src="https://img.youtube.com/vi/rve0eHGxxTU/hqdefault.jpg" alt="Almas Ali testimonial" loading="lazy">
+                <div class="play-button">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 24px;">▶</div>
+                </div>
+                <div class="video-card-info">
+                    <h4>Almas Ali</h4>
+                    <p>Founder, NiveshPe</p>
+                </div>
+            </a>
+            <a href="https://youtube.com/shorts/g02ZlxgGLVI" target="_blank" class="testimonial-video-card">
+                <img src="https://img.youtube.com/vi/g02ZlxgGLVI/hqdefault.jpg" alt="Mukesh Sharma testimonial" loading="lazy">
+                <div class="play-button">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 24px;">▶</div>
+                </div>
+                <div class="video-card-info">
+                    <h4>Mukesh Sharma</h4>
+                    <p>Founder, Money Matters Online</p>
+                </div>
+            </a>
+            <a href="https://youtube.com/shorts/gpU8qSMOAWI" target="_blank" class="testimonial-video-card">
+                <img src="https://img.youtube.com/vi/gpU8qSMOAWI/hqdefault.jpg" alt="Rajat Yadav testimonial" loading="lazy">
+                <div class="play-button">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 24px;">▶</div>
+                </div>
+                <div class="video-card-info">
+                    <h4>Rajat Yadav</h4>
+                    <p>Founder, NiveshPe</p>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -2769,6 +3637,120 @@
                     openModal();
                 });
             });
+
+        // ============================================
+        // TAB SWITCHING FUNCTIONALITY
+        // ============================================
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                const targetTab = document.getElementById(`${tabName}-tab`);
+                if (targetTab) {
+                    targetTab.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // MEDIA MODAL FUNCTIONALITY
+        // ============================================
+        function openMediaModal(type, src, caption) {
+            if (type === 'image') {
+                const mediaModal = document.getElementById('mediaModal');
+                const modalImage = document.getElementById('modalImage');
+                const modalCaption = document.getElementById('modalCaption');
+
+                modalImage.src = src;
+                modalCaption.textContent = caption || '';
+                mediaModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            } else if (type === 'video') {
+                const videoModal = document.getElementById('videoModal');
+                const modalVideo = document.getElementById('modalVideo');
+                const videoSource = modalVideo.querySelector('source');
+
+                videoSource.src = src;
+                modalVideo.load();
+                videoModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeMediaModal() {
+            const mediaModal = document.getElementById('mediaModal');
+            const videoModal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+
+            // Close image modal
+            if (mediaModal) {
+                mediaModal.classList.remove('show');
+                const modalImage = document.getElementById('modalImage');
+                if (modalImage) modalImage.src = '';
+            }
+
+            // Close video modal and stop playback
+            if (videoModal) {
+                videoModal.classList.remove('show');
+                if (modalVideo) {
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                    const videoSource = modalVideo.querySelector('source');
+                    if (videoSource) videoSource.src = '';
+                }
+            }
+
+            document.body.style.overflow = '';
+        }
+
+        // Close modals on overlay click
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'mediaModal' || e.target.id === 'videoModal') {
+                closeMediaModal();
+            }
+        });
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMediaModal();
+            }
+        });
+
+        // ============================================
+        // FEATURED VIDEO LOADER (for Testimonials)
+        // ============================================
+        function loadFeaturedVideo(videoSrc, clientName, clientTitle, clientResult) {
+            const featuredVideoFrame = document.getElementById('featuredVideoFrame');
+            const featuredClientName = document.getElementById('featuredClientName');
+            const featuredClientTitle = document.getElementById('featuredClientTitle');
+            const featuredClientResult = document.getElementById('featuredClientResult');
+
+            // Update video source with autoplay when clicked
+            if (featuredVideoFrame) {
+                featuredVideoFrame.src = videoSrc + '?autoplay=1&rel=0';
+            }
+
+            // Update client info
+            if (featuredClientName) featuredClientName.textContent = clientName;
+            if (featuredClientTitle) featuredClientTitle.textContent = clientTitle;
+            if (featuredClientResult) featuredClientResult.textContent = `"${clientResult}"`;
+
+            // Scroll to featured video
+            const featuredVideo = document.querySelector('.featured-video');
+            if (featuredVideo) {
+                featuredVideo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
         });
     </script>
 
@@ -2824,6 +3806,28 @@
                     <strong>✗ Oops!</strong><br>Something went wrong. Please try again or email us directly.
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Media Modal for Images -->
+    <div id="mediaModal" class="modal">
+        <div class="modal-content media-modal">
+            <span class="modal-close" onclick="closeMediaModal()">&times;</span>
+            <img src="" id="modalImage" alt="">
+            <div class="modal-caption">
+                <p id="modalCaption"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal for Video Playback -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content video-modal">
+            <span class="modal-close" onclick="closeMediaModal()">&times;</span>
+            <video controls id="modalVideo">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </body>
