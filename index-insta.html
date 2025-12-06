@@ -565,7 +565,24 @@
         }
 
         .content-section.light {
-            background: var(--light-gray);
+            background: linear-gradient(135deg, rgba(131,58,180,0.02) 0%, rgba(253,29,29,0.02) 100%);
+        }
+
+        .content-section.trust-section {
+            background: linear-gradient(135deg, rgba(131,58,180,0.05) 0%, rgba(245,96,64,0.05) 50%, rgba(252,175,69,0.05) 100%);
+            position: relative;
+        }
+
+        .content-section.testimonials-section {
+            background: var(--gradient-reverse);
+            color: var(--white);
+            position: relative;
+        }
+
+        .testimonials-section .section-header h2,
+        .testimonials-section .section-header p,
+        .testimonials-section .section-label {
+            color: var(--white);
         }
 
         .content-section.full-width {
@@ -995,9 +1012,28 @@
             position: relative;
         }
 
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 2px;
+            background: var(--gradient-main);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
         .portfolio-item:hover {
             transform: scale(1.03);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 16px 48px rgba(131, 58, 180, 0.2);
+        }
+
+        .portfolio-item:hover::before {
+            opacity: 1;
         }
 
         .portfolio-item img {
@@ -1137,7 +1173,7 @@
 
         .client-logos-ticker img:hover {
             opacity: 1;
-            filter: grayscale(0%);
+            filter: grayscale(0%) drop-shadow(0 0 20px rgba(131, 58, 180, 0.5));
             transform: scale(1.1);
         }
 
@@ -1236,7 +1272,7 @@
 
         .whatsapp-card:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 40px rgba(131, 58, 180, 0.3);
             animation-play-state: paused;
         }
 
@@ -1687,9 +1723,11 @@
 
         /* Footer */
         footer {
-            background: var(--white);
+            background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
             padding: 80px 60px 40px;
-            border-top: 1px solid #f0f0f0;
+            border-top: 3px solid transparent;
+            border-image: var(--gradient-main) 1;
+            color: var(--white);
         }
 
         .footer-content {
@@ -1704,12 +1742,12 @@
         .footer-brand h3 {
             font-size: 24px;
             font-weight: 900;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 16px;
         }
 
         .footer-brand p {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 15px;
             line-height: 1.7;
             margin-bottom: 24px;
@@ -1724,20 +1762,24 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: var(--light-gray);
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--black);
+            color: var(--white);
             transition: all 0.3s ease;
             text-decoration: none;
             font-weight: 600;
         }
 
+        .social-links a:hover {
+            background: var(--gradient-main);
+        }
+
         .social-links a svg {
             width: 24px;
             height: 24px;
-            fill: var(--black);
+            fill: var(--white);
             transition: fill 0.3s ease;
         }
 
@@ -1756,7 +1798,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--black);
+            color: var(--white);
             margin-bottom: 20px;
         }
 
@@ -1769,23 +1811,23 @@
         }
 
         .footer-column a {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 15px;
             transition: color 0.2s;
         }
 
         .footer-column a:hover {
-            color: var(--pink);
+            color: var(--white);
         }
 
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
             padding-top: 40px;
-            border-top: 1px solid #f0f0f0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
         }
 
