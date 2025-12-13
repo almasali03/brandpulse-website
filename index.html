@@ -2336,13 +2336,26 @@
            ============================================ */
 
         .website-cta-banner {
-            background: var(--insta-purple);
+            background: var(--white);
             padding: 60px 40px;
             margin: 80px auto 0;
             border-radius: 16px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 8px 32px rgba(131, 58, 180, 0.12);
+        }
+
+        /* Animated gradient border */
+        .website-cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: var(--gradient-main);
+            border-radius: 16px;
+            z-index: -1;
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 200%;
         }
 
         .website-cta-content {
@@ -2358,7 +2371,7 @@
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--white);
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--gradient-main);
             padding: 8px 20px;
             border-radius: 20px;
             margin-bottom: 20px;
@@ -2368,7 +2381,7 @@
         .website-cta-banner h3 {
             font-size: 48px;
             font-weight: 900;
-            color: var(--white);
+            color: var(--insta-purple);
             margin-bottom: 16px;
             line-height: 1.2;
             letter-spacing: -1px;
@@ -2377,9 +2390,8 @@
         .website-cta-subtitle {
             font-size: 22px;
             font-weight: 600;
-            color: var(--white);
+            color: #333;
             margin-bottom: 24px;
-            opacity: 0.95;
         }
 
         .website-cta-price {
@@ -2394,32 +2406,32 @@
         .price-label {
             font-size: 18px;
             font-weight: 600;
-            color: var(--white);
-            opacity: 0.9;
+            color: #555;
         }
 
         .price-amount {
             font-size: 56px;
             font-weight: 900;
-            color: var(--white);
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             line-height: 1;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .price-suffix {
             font-size: 18px;
             font-weight: 600;
-            color: var(--white);
-            opacity: 0.9;
+            color: #555;
         }
 
         .website-cta-btn {
-            background: var(--white);
-            color: var(--insta-purple);
+            background: var(--gradient-main);
+            color: var(--white);
             font-size: 18px;
             font-weight: 800;
             padding: 20px 48px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 24px rgba(131, 58, 180, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -2428,7 +2440,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: var(--gradient-main);
+            background: var(--gradient-reverse);
             border-radius: 8px;
             z-index: -1;
             opacity: 0;
@@ -2437,8 +2449,7 @@
 
         .website-cta-btn:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-            color: var(--white);
+            box-shadow: 0 12px 40px rgba(131, 58, 180, 0.5);
         }
 
         .website-cta-btn:hover::before {
@@ -2453,6 +2464,10 @@
             .website-cta-banner {
                 padding: 40px 24px;
                 margin: 60px auto 0;
+                border-radius: 12px;
+            }
+
+            .website-cta-banner::before {
                 border-radius: 12px;
             }
 
