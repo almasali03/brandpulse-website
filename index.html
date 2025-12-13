@@ -776,7 +776,7 @@
             gap: 60px;
             align-items: center;
             margin-bottom: 60px;
-            min-height: 400px;
+            min-height: 280px;
         }
 
         .prominent-service-card.reverse {
@@ -805,9 +805,51 @@
             font-size: 18px;
         }
 
+        /* Hero Service CTA Button */
+        .btn-service-cta {
+            background: transparent;
+            color: var(--insta-purple);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            border: 2px solid var(--insta-purple);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-service-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-main);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-service-cta:hover {
+            color: var(--white);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(131, 58, 180, 0.3);
+        }
+
+        .btn-service-cta:hover::before {
+            opacity: 1;
+        }
+
+        .btn-service-cta:active {
+            transform: translateY(0);
+        }
+
         .service-visual {
             height: 100%;
-            min-height: 400px;
+            min-height: 280px;
         }
 
         .visual-placeholder {
@@ -917,6 +959,50 @@
             color: var(--gray);
             line-height: 1.6;
             font-size: 16px;
+        }
+
+        /* Secondary Service CTA Button */
+        .btn-service-cta-secondary {
+            background: transparent;
+            color: var(--insta-purple);
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 2px solid var(--insta-purple);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-block;
+            margin-top: 16px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-service-cta-secondary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-main);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-service-cta-secondary:hover {
+            color: var(--white);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(131, 58, 180, 0.3);
+        }
+
+        .btn-service-cta-secondary:hover::before {
+            opacity: 1;
+        }
+
+        .btn-service-cta-secondary:active {
+            transform: translateY(0);
         }
 
         /* Industries Grid - Organic Layout */
@@ -2014,7 +2100,7 @@
             }
 
             .service-visual {
-                min-height: 300px;
+                min-height: 240px;
             }
 
             .service-content h3 {
@@ -2855,6 +2941,7 @@
                 <div class="service-content">
                     <h3>Social Media Strategy & Management</h3>
                     <p>Turn attention into action. Your brand—visible, relevant, impossible to ignore.</p>
+                    <button onclick="openModal()" class="btn-service-cta">Boost My Social Media</button>
                 </div>
                 <div class="service-visual">
                     <img src="assets/social-media-optimized.webp" alt="Social Media Strategy Dashboard" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
@@ -2869,6 +2956,7 @@
                 <div class="service-content">
                     <h3>Performance Marketing</h3>
                     <p>Transform ad spend into measurable sales with data-driven precision.</p>
+                    <button onclick="openModal()" class="btn-service-cta">Optimize My Ads</button>
                 </div>
             </div>
 
@@ -2877,6 +2965,7 @@
                 <div class="service-content">
                     <h3>Content Marketing</h3>
                     <p>Content that doesn't just educate—it persuades, converts, and positions you as the category leader.</p>
+                    <button onclick="openModal()" class="btn-service-cta">Build My Content</button>
                 </div>
                 <div class="service-visual">
                     <img src="assets/content-marketing-optimized.webp" alt="Content Marketing Strategy" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
@@ -2892,6 +2981,7 @@
                 </div>
                 <h3>TVCs & DVCs (Video Ads)</h3>
                 <p>Cinematic storytelling designed to stop scrolling and start converting.</p>
+                <button onclick="openModal()" class="btn-service-cta-secondary">Create My Video</button>
             </div>
             <div class="secondary-service-card">
                 <div class="service-icon">
@@ -2899,6 +2989,7 @@
                 </div>
                 <h3>Search Engine Optimization (SEO)</h3>
                 <p>Rank higher, get found, win demand before competitors see it coming.</p>
+                <button onclick="openModal()" class="btn-service-cta-secondary">Improve My SEO</button>
             </div>
             <div class="secondary-service-card">
                 <div class="service-icon">
@@ -2906,6 +2997,7 @@
                 </div>
                 <h3>Offline Branding (Hoardings, Signage, Stationery)</h3>
                 <p>Your brand everywhere—consistent, bold, unmistakable.</p>
+                <button onclick="openModal()" class="btn-service-cta-secondary">Brand My Business</button>
             </div>
         </div>
 
