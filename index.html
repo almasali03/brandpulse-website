@@ -2332,6 +2332,162 @@
         }
 
         /* ============================================
+           WEBSITE CREATION CTA BANNER
+           ============================================ */
+
+        .website-cta-banner {
+            background: var(--gradient-reverse);
+            padding: 60px 40px;
+            margin: 80px auto 0;
+            border-radius: 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .website-cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+        }
+
+        .website-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .website-cta-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .website-cta-banner h3 {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .website-cta-subtitle {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .website-cta-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .price-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .price-amount {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-suffix {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .website-cta-btn {
+            background: var(--white);
+            color: var(--insta-purple);
+            font-size: 18px;
+            font-weight: 800;
+            padding: 20px 48px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .website-cta-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-main);
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .website-cta-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            color: var(--white);
+        }
+
+        .website-cta-btn:hover::before {
+            opacity: 1;
+        }
+
+        .website-cta-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .website-cta-banner {
+                padding: 40px 24px;
+                margin: 60px auto 0;
+                border-radius: 12px;
+            }
+
+            .website-cta-banner h3 {
+                font-size: 32px;
+            }
+
+            .website-cta-subtitle {
+                font-size: 18px;
+            }
+
+            .price-amount {
+                font-size: 42px;
+            }
+
+            .price-label,
+            .price-suffix {
+                font-size: 16px;
+            }
+
+            .website-cta-btn {
+                font-size: 16px;
+                padding: 16px 36px;
+            }
+        }
+
+        /* ============================================
            MODAL STYLES
            ============================================ */
 
@@ -2743,6 +2899,21 @@
                 </div>
                 <h3>Offline Branding (Hoardings, Signage, Stationery)</h3>
                 <p>Your brand everywhere—consistent, bold, unmistakable.</p>
+            </div>
+        </div>
+
+        <!-- Website Creation CTA -->
+        <div class="website-cta-banner">
+            <div class="website-cta-content">
+                <div class="website-cta-label">SPECIAL OFFER</div>
+                <h3>Need a High-Converting Website?</h3>
+                <p class="website-cta-subtitle">We Build Stunning Websites That Drive Results</p>
+                <div class="website-cta-price">
+                    <span class="price-label">Starting at just</span>
+                    <span class="price-amount">₹15,000</span>
+                    <span class="price-suffix">onwards</span>
+                </div>
+                <button onclick="openModal()" class="btn-primary website-cta-btn">Get Your Website Built</button>
             </div>
         </div>
     </section>
